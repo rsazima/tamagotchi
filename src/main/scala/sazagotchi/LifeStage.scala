@@ -21,8 +21,8 @@ final class LifeStage(val name: String, val stageHours: Int, val hourDur: Durati
 }
 
 object LifeStage {
-  val stdHourDur: Duration = Duration.ofMillis(500)
-  val egg   = new LifeStage("Egg",   1 * 1 * 24, stdHourDur, 24, 24, 24)
+  val stdHourDur: Duration = Duration.ofMillis(2000)
+  val egg   = new LifeStage("Egg",   1 * 1 * 12, stdHourDur, 24, 24, 24)
   val child = new LifeStage("Child", 1 * 2 * 24, stdHourDur,  6, 12, 12)
   val teen  = new LifeStage("Teen",  1 * 2 * 24, stdHourDur,  6, 24, 24)
   val adult = new LifeStage("Adult", 1 * 4 * 24, stdHourDur,  8, 24, 24)

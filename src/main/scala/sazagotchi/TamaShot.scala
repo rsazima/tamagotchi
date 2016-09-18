@@ -83,10 +83,10 @@ class TamaShot (
   /** Private members */
   private def howYouDoin: TamaShot = {
     val (stage, stChange) = evolve
-    val sleepTime = if (sleepDue && (bedTraining > 8)
-      && (Random.nextInt(11) < bedTraining)) OffsetDateTime.now() else lastSleep
-    val poopTime = if (poopDue && (toiletTraining > 8)
-      && (Random.nextInt(11) < toiletTraining)) OffsetDateTime.now() else lastPoop
+    val sleepTime = if (sleepDue && (bedTraining > 5)
+      && (Random.nextInt(8) < bedTraining)) OffsetDateTime.now() else lastSleep
+    val poopTime = if (poopDue && (toiletTraining > 5)
+      && (Random.nextInt(8) < toiletTraining)) OffsetDateTime.now() else lastPoop
     new TamaShot(name, lifeCycle, createdAt, stage, stChange,
       lastMeal, sleepTime, poopTime, bedTraining, toiletTraining)
   }

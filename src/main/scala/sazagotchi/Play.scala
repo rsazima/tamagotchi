@@ -28,17 +28,22 @@ object Play extends App {
         val t = tl.head
         println(t.healthReport)
         println(s"What would you like to give ${t.name}? " +
-          s"(F)ood, (S)leep, (C)leanup, (M)edication")
+          s"(F)ood, (S)leep, (C)leanup, (M)edication. Press H for Health Report.")
         readChar() match {
-          case 'F' => if (!t.ill) iterate(t.feed) else {
-            println("> Too ill, won't eat."); iterate(tl.tail) }
-          case 'S' =>  if (!t.ill) iterate(t.sleep) else {
-            println("> Too ill, won't sleep."); iterate(tl.tail) }
-          case 'C' =>  if (!t.ill) iterate(t.clean) else {
-            println("> Too ill, cleaning not enough."); iterate(tl.tail) }
-          case 'M' =>  if (t.ill) iterate(t.medicate) else {
-            println("> Healthy, won't take meds."); iterate(tl.tail) }
-          case 'Q' => println("** Thanks for playing! **")
+          case 'F' | 'f' =>
+            if (!t.ill) { println("> Yummy! Blurp!"); iterate(t.feed) }
+            else { println("> Too ill, won't eat.");  iterate(tl.tail) }
+          case 'S' | 's' =>
+            if (!t.ill) { println("> Zzzzzzzzzzz..."); iterate(t.sleep) }
+            else { println("> Too ill, won't sleep."); iterate(tl.tail) }
+          case 'C' | 'c' =>
+            if (!t.ill) { println("> Nice and clean."); iterate(t.clean) }
+            else { println("> Too ill, cleaning not enough."); iterate(tl.tail) }
+          case 'M' | 'm' =>
+            if (t.ill) { println("> Yuck! Tastes awful."); iterate(t.medicate) }
+            else { println("> Healthy, won't take meds."); iterate(tl.tail) }
+          case 'H' | 'h' => iterate(tl.tail)
+          case 'Q' | 'q' => println("** Thanks for playing! **")
           case _ => println("> Sorry, don't know this one..."); iterate(tl.tail)
         }
       }
