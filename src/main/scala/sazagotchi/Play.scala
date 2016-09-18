@@ -31,7 +31,7 @@ object Play extends App {
           s"(F)ood, (S)leep, (C)leanup, (M)edication. Press H for Health Report.")
         readChar() match {
           case 'F' | 'f' =>
-            if (!t.ill) { println("> Yummy! Blurp!"); iterate(t.feed) }
+            if (!t.ill) { println("> Yummy! Buuurp!"); iterate(t.feed) }
             else { println("> Too ill, won't eat.");  iterate(tl.tail) }
           case 'S' | 's' =>
             if (!t.ill) { println("> Zzzzzzzzzzz..."); iterate(t.sleep) }
