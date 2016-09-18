@@ -1,6 +1,34 @@
-/RUNNING_PID
-/logs/
-/project/*-shim.sbt
-/project/project/
-/project/target/
-/target/
+# sbt specific
+.cache
+.history
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# Ignore IntelliJ Idea project files
+/.idea/
+/*.iml
+.idea_modules
+*.eml
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+
+# Other
+tmp/
+server.pid
+*.class
+*.log
+.settings
+/out
+.DS_Store
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
